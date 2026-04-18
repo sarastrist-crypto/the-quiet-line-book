@@ -11,16 +11,12 @@ function App() {
     e.preventDefault();
     setLoading(true);
     setMessage('');
-    
+
     try {
-      // Note: You will need to add your Kit API Key and Form ID to your .env file
-      const response = await fetch(`https://api.convertkit.com/v3/forms/${import.meta.env.VITE_KIT_FORM_ID}/subscribe`, {
+      const response = await fetch('/api/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          api_key: import.meta.env.VITE_KIT_API_KEY,
-          email: email,
-        }),
+        body: JSON.stringify({ email }),
       });
 
       if (response.ok) {
