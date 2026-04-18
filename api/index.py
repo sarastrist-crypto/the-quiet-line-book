@@ -1,5 +1,6 @@
 import os
 import stripe
+import httpx
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
@@ -8,16 +9,57 @@ from dotenv import load_dotenv
 load_dotenv()
 
 stripe.api_key = os.environ.get("STRIPE_SECRET_KEY")
+
 app = FastAPI()
 
 # Enable CORS for the frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # In production, specify your domain
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+# ─── KIT / CONVERTKIT ────────────────────────────────────────────────────────
+
+class SubscribeRequest(BaseModel):
+    email: str
+
+@app.post("/api/subscribe")
+async def subscribe(item: SubscribeRequest):
+    api_key = os.environ.get("VITE_KIT_API_KEY")
+    form_id = os.environ.get("VITE_KIT_FORM_ID")
+
+    if not api_key or not form_id:
+        raise HTTPException(status_code=500, detail="KIT credentials not configured")
+
+    if not item.email or "@" not in item.email:
+        raise HTTPException(status_code=400, detail="A valid email is required")
+
+    try:
+        async with httpx.AsyncClient() as client:
+            response = await client.post(
+                f"https://api.convertkit.com/v3/forms/{form_id}/subscribe",
+                json={
+                    "api_key": api_key,
+                    "email": item.email.strip().lower(),
+                },
+                headers={"Content-Type": "application/json"},
+                timeout=10.0,
+            )
+
+        if response.status_code != 200:
+            raise HTTPException(status_code=400, detail="Subscription failed")
+
+        return {"success": True}
+
+    except httpx.RequestError as e:
+        raise HTTPException(status_code=500, detail="Something went wrong. Please try again.")
+
+
+# ─── STRIPE ──────────────────────────────────────────────────────────────────
 
 class CheckoutSessionRequest(BaseModel):
     price_id: str
@@ -42,6 +84,7 @@ async def create_checkout_session(item: CheckoutSessionRequest):
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
 
+
 @app.post("/api/webhook")
 async def stripe_webhook(request: Request):
     payload = await request.body()
@@ -51,18 +94,17 @@ async def stripe_webhook(request: Request):
         event = stripe.Webhook.construct_event(
             payload, sig_header, os.environ.get("STRIPE_WEBHOOK_SECRET")
         )
-    except ValueError as e:
+    except ValueError:
         return {"status": "invalid payload"}
-    except stripe.error.SignatureVerificationError as e:
+    except stripe.error.SignatureVerificationError:
         return {"status": "invalid signature"}
 
-    # Handle the checkout.session.completed event
     if event['type'] == 'checkout.session.completed':
         session = event['data']['object']
-        # TODO: Trigger email delivery of the book or notify shipping
         print(f"Payment successful for session {session['id']}")
 
     return {"status": "success"}
+
 
 if __name__ == "__main__":
     import uvicorn
