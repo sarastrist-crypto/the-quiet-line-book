@@ -283,40 +283,40 @@ function App() {
           </div>
           <div className="reviews-grid">
             <div className="review-card">
-              <div className="review-outlet">★★★★★ · Kirkus Reviews</div>
+              <div className="review-outlet">★★★★★ · Advance review</div>
               <blockquote>"A rare book about working life that refuses both the cheerleading and the cynicism. Walker writes the way a good doctor talks — calmly, precisely, and as though he has actually seen the thing he is describing."</blockquote>
-              <div className="review-who">Kirkus Reviews</div>
-              <div className="review-role">Starred review</div>
+              <div className="review-who">Advance reader</div>
+              <div className="review-role">Early galley</div>
             </div>
             <div className="review-card">
-              <div className="review-outlet">Financial Times · Books</div>
+              <div className="review-outlet">Editorial</div>
               <blockquote>"The Quiet Line names a thing most managers have felt and almost none have been willing to write down. It will be in a lot of suitcases this summer."</blockquote>
               <div className="review-who">Pilita Clark</div>
-              <div className="review-role">Associate editor, FT Work &amp; Careers</div>
+              <div className="review-role">Editor · Work &amp; Careers</div>
             </div>
             <div className="review-card">
-              <div className="review-outlet">Work in Progress · Podcast</div>
+              <div className="review-outlet">Podcast</div>
               <blockquote>"I annotated the margins of my galley so aggressively my partner asked who I was fighting with."</blockquote>
               <div className="review-who">Adam Grant</div>
-              <div className="review-role">Organizational psychologist, Wharton</div>
+              <div className="review-role">Organizational psychologist</div>
             </div>
             <div className="review-card">
               <div className="review-outlet">Private note</div>
               <blockquote>"I gave this to three people on my leadership team before it was even bound. Two of them have quietly, productively, changed how they run their departments since."</blockquote>
               <div className="review-who">Dr. Aisha N. Okafor</div>
-              <div className="review-role">Chief of Surgery, Johns Hopkins</div>
+              <div className="review-role">Chief of Surgery</div>
             </div>
             <div className="review-card">
-              <div className="review-outlet">The Next Big Idea Club</div>
+              <div className="review-outlet">Advance reader</div>
               <blockquote>"There are career books that teach you to perform better. This one asks, more quietly, whether you've forgotten what you were performing for."</blockquote>
               <div className="review-who">Rufus Griscom</div>
-              <div className="review-role">Founder, The Next Big Idea Club</div>
+              <div className="review-role">Publisher &amp; host</div>
             </div>
             <div className="review-card">
-              <div className="review-outlet">Harvard Business Review · IdeaCast</div>
+              <div className="review-outlet">Podcast</div>
               <blockquote>"Walker's 'motion versus movement' distinction rewired how I ran my own week inside of 48 hours. I don't say that about many books."</blockquote>
               <div className="review-who">Amy Gallo</div>
-              <div className="review-role">Contributing editor, HBR</div>
+              <div className="review-role">Contributing editor</div>
             </div>
           </div>
         </div>
@@ -360,15 +360,15 @@ function App() {
             </details>
             <details>
               <summary>How long is it, and how is it structured?</summary>
-              <div className="faq-ans">A five-hour read — three segments, thirty-one short chapters. Most people finish it across a long evening and a Saturday morning. The margins are intentionally wide; the book is written to be written in.</div>
+              <div className="faq-ans">A short read — designed to be finished in a single afternoon, or a single strong-reader session. It is meant to captivate your attention briefly, hold it, and invite you back to re-read and sit with the story again. The margins are intentionally wide; the book is written to be written in.</div>
             </details>
             <details>
-              <summary>Is there an audiobook? An ebook?</summary>
-              <div className="faq-ans"><strong>Audiobook:</strong> read by Tristian, available on Libro.fm, Audible, and Apple Books. <strong>Ebook:</strong> available on Kindle, Apple Books, and as a DRM-free EPUB direct from the author.</div>
+              <summary>Is there an audiobook, an ebook, or a hardcover?</summary>
+              <div className="faq-ans"><strong>Ebook:</strong> available now. <strong>Audiobook:</strong> in production. <strong>Hardcover:</strong> coming soon.</div>
             </details>
             <details>
               <summary>Do you do bulk orders for teams or leadership offsites?</summary>
-              <div className="faq-ans">Yes. Orders of 25+ ship at $18/copy with a bookplate and a one-page reader's guide. For orders of 100+, Tristian hosts a free 45-minute Q&amp;A with your group. <a href="mailto:tristian@tristianwalker.com">tristian@tristianwalker.com</a>.</div>
+              <div className="faq-ans">Yes. For bulk orders for teams or leadership offsites, please reach out directly to <a href="mailto:speaker@quietlinebook.com">speaker@quietlinebook.com</a>.</div>
             </details>
             <details>
               <summary>I'm a journalist or podcaster. Is there a press kit?</summary>
