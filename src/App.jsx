@@ -867,24 +867,104 @@ function App() {
         /* Responsive */
         @media (max-width: 900px) {
           .reviews-grid, .segments-grid { grid-template-columns: 1fr; }
-          .journey-grid { grid-template-columns: 1fr; gap: 3rem; }
+          .journey-grid { grid-template-columns: 1fr; gap: 2rem; }
           .premise-grid { text-align: left; }
           .footer-contact { align-items: flex-start; }
+          /* Show the book cover first on mobile — emotional hook before copy */
+          .hero-section .hero-image-area { order: -1; }
+          .book-shadow-box { max-width: 320px; }
         }
         @media (max-width: 768px) {
-          .nav-links { gap: 1rem; }
+          .nav-links { gap: 0.5rem; }
           .nav-link { display: none; }
           .hero-text { text-align: center; margin: 0 auto; }
           .hero-subtext { margin-left: auto; margin-right: auto; }
-          .hero-ctas { align-items: center; }
-          .secondary-ctas { flex-direction: column; }
+          .hero-ctas { align-items: stretch; }
+          .hero-ctas .btn-primary { width: 100%; }
+          .secondary-ctas { flex-direction: column; gap: 0.75rem; }
           .capture-form { flex-direction: column; }
           .input-field { min-width: 100%; }
           .footer-flex { flex-direction: column; gap: 2rem; text-align: center; }
           .footer-contact { align-items: center; }
           .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
-          .footer-nav { justify-content: center; }
-          .capture-card { padding: 2.5rem 1.5rem; }
+          .footer-nav { justify-content: center; flex-wrap: wrap; }
+          .capture-card { padding: 2.25rem 1.25rem; }
+        }
+
+        /* Phone tightening — 320px to 640px */
+        @media (max-width: 640px) {
+          /* Tighten global container padding */
+          :global(.container), :global(.container-narrow) { padding: 0 1.25rem; }
+          :global(.section-py) { padding: 3.5rem 0; }
+
+          /* Header */
+          .main-header { padding: 1rem 0; }
+          .logo { font-size: 0.9rem; letter-spacing: 0.08em; white-space: nowrap; }
+          .header-flex { gap: 0.75rem; }
+          :global(.btn-sm) { padding: 0.45rem 0.8rem; font-size: 0.7rem; white-space: nowrap; }
+
+          /* Hero */
+          .hero-section { padding: 2.5rem 0 3rem; }
+          .h1-hero { font-size: clamp(2.35rem, 9vw, 3rem); line-height: 1.1; }
+          /* Drop the hard-coded line break on narrow screens so the title wraps naturally */
+          .h1-hero br { display: none; }
+          .hero-hook { font-size: 1.15rem; margin: 1rem 0 0.75rem; }
+          .hero-subtext { font-size: 1rem; margin-bottom: 2rem; line-height: 1.7; }
+          .creds-hero { font-size: 0.75rem; letter-spacing: 0.18em; gap: 0.5rem; justify-content: center; }
+          .creds-hero::before, .creds-hero::after { width: 18px; }
+          .book-shadow-box { max-width: 260px; }
+
+          /* Trust bar */
+          .trust-bar { padding: 2rem 0; }
+          .trust-flex { gap: 1.5rem; justify-content: center; }
+          .trust-val { font-size: 2.25rem; }
+          .trust-unit { font-size: 0.7rem; margin-left: 4px; }
+          .trust-label { font-size: 0.7rem; letter-spacing: 0.12em; margin-top: 0.25rem; }
+          .trust-coda { font-size: 0.95rem; margin-top: 1.5rem; }
+
+          /* Manuscript excerpt */
+          .excerpt-section { padding: 3rem 0; }
+          .excerpt-meta { font-size: 0.65rem; letter-spacing: 0.22em; margin-bottom: 1.25rem; }
+          .excerpt-quote { font-size: 1.15rem; line-height: 1.55; }
+          .excerpt-margin-note { max-width: 100%; padding-left: 0.75rem; font-size: 0.8rem; }
+
+          /* Sections */
+          :global(.section-title) { font-size: clamp(1.65rem, 6vw, 2.2rem); }
+          .premise-content p { font-size: 1rem; line-height: 1.7; }
+          .who-it-is-for { padding: 1.25rem; margin-top: 1.5rem; }
+          .who-it-is-for h3 { font-size: 0.75rem; }
+          .who-it-is-for p { font-size: 0.95rem; }
+
+          /* Segments */
+          .segment-card { padding: 1.75rem; }
+          .segment-card h3 { font-size: 1.2rem; }
+          .segments-head, .journey-head, .reviews-head, .faq-head { margin-bottom: 2rem; }
+
+          /* Journey */
+          .journey-section { padding: 3.5rem 0; }
+          .journey-panel p { font-size: 0.95rem; line-height: 1.7; }
+          .journey-img { aspect-ratio: 4 / 5; }
+          .journey-coda { margin-top: 2rem; font-size: 0.95rem; }
+
+          /* Reviews */
+          .review-card { padding: 1.75rem; }
+          .review-card blockquote { font-size: 0.95rem; margin-bottom: 1.25rem; }
+
+          /* FAQ */
+          .faq-list summary { padding: 1rem 1.25rem; font-size: 1rem; }
+          .faq-ans { padding: 0 1.25rem 1.25rem; font-size: 0.95rem; }
+
+          /* Lead capture */
+          .capture-card { padding: 1.75rem 1.25rem; border-radius: 12px; }
+          .h2-card { font-size: 1.5rem; }
+          .capture-card p { font-size: 0.95rem; }
+          .input-field { padding: 0.85rem 1.15rem; min-width: 0; }
+
+          /* Footer */
+          .footer { padding: 3rem 0 1.5rem; }
+          .footer-flex { margin-bottom: 2rem; }
+          .footer-bottom { font-size: 0.8rem; }
+          .footer-nav { gap: 1.5rem; }
         }
       `}</style>
     </div>
