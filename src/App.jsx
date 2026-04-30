@@ -72,7 +72,7 @@ function App() {
                 rel="noopener noreferrer"
                 className="btn btn-primary"
               >
-                Read the Full Book &mdash; Free Until June 1
+                Read the Full Book &mdash; Free Until May 31
               </a>
               <div className="secondary-ctas">
                 <span className="or-text">Or order from:</span>
@@ -89,7 +89,7 @@ function App() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="amazon-btn amazon-demoted"
-                      aria-label="Available on Amazon (free reading available until June 1)"
+                      aria-label="Available on Amazon (free reading available until May 31)"
                     >
                       <svg className="amazon-logo" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M30.64 12.33C29.62 10.96 28.32 10.15 26.6 10.15C22.56 10.15 20.46 15.09 20.46 19.34C20.46 22.84 21.75 25.13 24.31 25.13C25.4 25.13 26.68 24.59 27.65 23.51L27.76 24.59L31.33 24.59L31.33 6.91L30.64 6.91L30.64 12.33ZM28.59 20.14C28.59 21.76 27.94 22.7 26.97 22.7C25.89 22.7 25.35 21.36 25.35 19.88C25.35 18.26 26.11 15.17 27.4 15.17C28.16 15.17 28.59 16.24 28.59 18.26V20.14ZM16.32 20.81C15.08 20.14 13.9 19.73 12.72 19.73C11.53 19.73 10.94 20.41 10.94 21.15C10.94 21.89 11.42 22.29 12.55 22.29C13.52 22.29 14.65 21.89 15.51 21.15L16.32 20.81ZM38.44 10.15C36.88 10.15 35.64 11.02 34.94 12.23L34.94 10.42L31.38 10.42L31.38 24.59L32.07 24.59L32.07 18.26C32.07 14.83 33.52 12.7 36.33 12.7C37.89 12.7 38.44 13.57 38.44 14.71L38.44 24.59L39.13 24.59L39.13 14.37C39.13 11.62 38.05 10.15 35.84 10.15H38.44ZM44.2 11.5C44.2 10.76 43.61 10.15 42.85 10.15C42.04 10.15 41.5 10.76 41.5 11.5C41.5 12.23 42.04 12.84 42.85 12.84C43.61 12.84 44.2 12.23 44.2 11.5ZM44.25 14.1C44.25 13.43 43.7 12.89 43.03 12.89C42.36 12.89 41.82 13.43 41.82 14.1C41.82 14.77 42.36 15.31 43.03 15.31C43.7 15.31 44.25 14.77 44.25 14.1ZM37.9 31.32C31.54 36.35 21.46 39.58 10.4 39.58C6.9 39.58 3.51 39.15 0.35 38.29C-0.08 38.16 -0.19 37.62 0.22 37.35C4.26 34.69 9.38 33.15 14.5 33.15C19.78 33.15 25.11 34.83 29.84 38.01C34.1 40.84 38.98 42.06 43.94 42.06C45.34 42.06 46.74 41.93 48.09 41.66C48.68 41.52 48.9 40.85 48.41 40.58C45.71 39.1 42.96 37.28 40.21 35.46C39.46 34.92 38.65 34.38 37.9 33.84V31.32Z" fill="#BC744E"/>
@@ -97,7 +97,7 @@ function App() {
                       <span>Available on Amazon</span>
                     </a>
                     <span className="amazon-promo-note">
-                      Free until June 1 &mdash; <a href="https://readthequietlinebook.com/" target="_blank" rel="noopener noreferrer">read it free here</a>
+                      Free until May 31 &mdash; <a href="https://readthequietlinebook.com/" target="_blank" rel="noopener noreferrer">read it free here</a>
                     </span>
                   </div>
                 </div>
