@@ -40,7 +40,6 @@ function App() {
           <div className="logo" aria-label="Tristian Walker">Tristian Walker</div>
           <nav className="nav-links" aria-label="Primary">
             <a href="#book" className="nav-link">The Book</a>
-            <a href="#reviews" className="nav-link">Reviews</a>
             <a href="#author" className="nav-link">About</a>
             <a href="#chapter" className="btn btn-outline btn-sm">Chapter One, Free</a>
           </nav>
@@ -88,7 +87,7 @@ function App() {
                       href="https://www.amazon.com/dp/B0GXWMHYGK"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="amazon-btn amazon-demoted"
+                      className="amazon-btn"
                       aria-label="Available on Amazon (free reading available until May 31)"
                     >
                       <svg className="amazon-logo" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -113,7 +112,7 @@ function App() {
                 className="hero-book-cover"
                 width="1066"
                 height="1600"
-                fetchpriority="high"
+                fetchPriority="high"
                 decoding="async"
               />
             </div>
@@ -269,56 +268,6 @@ function App() {
         </div>
       </section>
 
-      {/* Reviews — richer grid from the UI kit */}
-      <section id="reviews" className="section-py reviews-section">
-        <div className="container">
-          <div className="reviews-head">
-            <span className="tagline">Early Readers</span>
-            <h2 className="section-title">
-              What the <span className="accent-italic">advance copies</span> said.
-            </h2>
-          </div>
-          <div className="reviews-grid">
-            <div className="review-card">
-              <div className="review-outlet">★★★★★ · Advance review</div>
-              <blockquote>"A rare book about working life that refuses both the cheerleading and the cynicism. Walker writes the way a good doctor talks — calmly, precisely, and as though he has actually seen the thing he is describing."</blockquote>
-              <div className="review-who">Advance reader</div>
-              <div className="review-role">Early galley</div>
-            </div>
-            <div className="review-card">
-              <div className="review-outlet">Editorial</div>
-              <blockquote>"The Quiet Line names a thing most managers have felt and almost none have been willing to write down. It will be in a lot of suitcases this summer."</blockquote>
-              <div className="review-who">Pilita Clark</div>
-              <div className="review-role">Editor · Work &amp; Careers</div>
-            </div>
-            <div className="review-card">
-              <div className="review-outlet">Podcast</div>
-              <blockquote>"I annotated the margins of my galley so aggressively my partner asked who I was fighting with."</blockquote>
-              <div className="review-who">Adam Grant</div>
-              <div className="review-role">Organizational psychologist</div>
-            </div>
-            <div className="review-card">
-              <div className="review-outlet">Private note</div>
-              <blockquote>"I gave this to three people on my leadership team before it was even bound. Two of them have quietly, productively, changed how they run their departments since."</blockquote>
-              <div className="review-who">Dr. Aisha N. Okafor</div>
-              <div className="review-role">Chief of Surgery</div>
-            </div>
-            <div className="review-card">
-              <div className="review-outlet">Advance reader</div>
-              <blockquote>"There are career books that teach you to perform better. This one asks, more quietly, whether you've forgotten what you were performing for."</blockquote>
-              <div className="review-who">Rufus Griscom</div>
-              <div className="review-role">Publisher &amp; host</div>
-            </div>
-            <div className="review-card">
-              <div className="review-outlet">Podcast</div>
-              <blockquote>"Walker's 'motion versus movement' distinction rewired how I ran my own week inside of 48 hours. I don't say that about many books."</blockquote>
-              <div className="review-who">Amy Gallo</div>
-              <div className="review-role">Contributing editor</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Bio / Story */}
       <section className="section-py story-section" id="author">
         <div className="container grid-2">
@@ -441,7 +390,7 @@ function App() {
         </div>
       </footer>
 
-      <style jsx>{`
+      <style>{`
         .site-wrapper { min-height: 100vh; }
 
         /* Header */

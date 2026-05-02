@@ -1,65 +1,42 @@
+// api/subscribe.js — Vercel serverless function
+// Subscribes an email to ConvertKit form 9341548 (The Quiet Line)
+// Required env var: CONVERTKIT_API_KEY (set in Vercel dashboard, never in code)
+
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
-    res.setHeader('Allow', 'POST');
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  // Vercel's Node runtime auto-parses JSON bodies, but fall back defensively.
-  let body = req.body;
-  if (typeof body === 'string') {
-    try { body = JSON.parse(body); } catch { body = {}; }
-  }
-  const email = body?.email;
+  const { email } = req.body;
 
-  if (!email || typeof email !== 'string' || !email.includes('@')) {
+  if (!email || !email.includes('@')) {
     return res.status(400).json({ error: 'Valid email required' });
   }
 
-  // Env-var precedence: CONVERTKIT_* first (original integration naming,
-  // most likely to hold the valid key), then KIT_*, then VITE_KIT_*.
-  const apiKey =
-    process.env.CONVERTKIT_API_KEY ||
-    process.env.KIT_API_KEY ||
-    process.env.VITE_KIT_API_KEY;
-  const formId =
-    process.env.CONVERTKIT_FORM_ID ||
-    process.env.KIT_FORM_ID ||
-    process.env.VITE_KIT_FORM_ID;
-
-  if (!apiKey || !formId) {
-    return res.status(500).json({
-      error: 'KIT credentials not configured',
-      detail: {
-        apiKey: apiKey ? 'present' : 'missing',
-        formId: formId ? 'present' : 'missing',
-      },
-    });
+  if (!process.env.CONVERTKIT_API_KEY) {
+    console.error('CONVERTKIT_API_KEY is not set');
+    return res.status(500).json({ error: 'Server configuration error' });
   }
 
-  // v3 ConvertKit/Kit API — api_key goes in the JSON body.
   try {
-    const kitResponse = await fetch(
-      `https://api.convertkit.com/v3/forms/${formId}/subscribe`,
+    const response = await fetch(
+      'https://api.convertkit.com/v3/forms/9341548/subscribe',
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          api_key: apiKey,
-          email: email.trim().toLowerCase(),
+          api_key: process.env.CONVERTKIT_API_KEY,
+          email,
         }),
       }
     );
 
-    const text = await kitResponse.text();
-    let payload;
-    try { payload = JSON.parse(text); } catch { payload = { raw: text }; }
+    const payload = await response.json();
 
-    if (!kitResponse.ok) {
-      console.error('Kit subscribe failed', kitResponse.status, payload);
-      return res.status(kitResponse.status).json({
-        error: 'Subscription failed',
-        status: kitResponse.status,
-        detail: payload,
+    if (!response.ok) {
+      console.error('ConvertKit error:', payload);
+      return res.status(400).json({
+        error: payload.message || 'Subscription failed',
       });
     }
 
