@@ -54,8 +54,8 @@ function App() {
               A New Book by Tristian Walker
             </div>
             <h1 className="h1-hero">
-              Some careers don't collapse —<br />
-              they <span className="accent-italic">quietly drift</span>.
+              Some careers don't collapse.<br />
+              They <span className="accent-italic">quietly drift</span>.
             </h1>
             <p className="hero-hook">
               A book for the operator who still shows up — and can't remember the last meeting that moved her.
