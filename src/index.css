@@ -112,7 +112,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 @media (max-width: 900px) {
   .grid-2 { grid-template-columns: 1fr; gap: 3rem; text-align: center; }
-  .section-py { padding: 5rem 0; }
+  .section-py { padding: 4rem 0; }
 }
 
 /* =====================================================================
@@ -129,7 +129,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .h1-hero {
-  font-size: clamp(3.5rem, 7vw, 5.5rem);
+  font-size: clamp(2.5rem, 8vw, 5.5rem);
   margin-bottom: 0.5rem;
   line-height: 1.1;
 }

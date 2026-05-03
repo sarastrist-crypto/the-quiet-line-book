@@ -868,17 +868,22 @@ function App() {
         /* Responsive */
         @media (max-width: 900px) {
           .reviews-grid, .segments-grid { grid-template-columns: 1fr; }
-          .journey-grid { grid-template-columns: 1fr; gap: 3rem; }
+          .journey-grid { grid-template-columns: 1fr; gap: 2rem; }
           .premise-grid { text-align: left; }
           .footer-contact { align-items: flex-start; }
         }
         @media (max-width: 768px) {
           .nav-links { gap: 1rem; }
           .nav-link { display: none; }
-          .hero-text { text-align: center; margin: 0 auto; }
+          .hero-text { text-align: center; margin: 0 auto; width: 100%; }
+          .creds-hero { justify-content: center; }
           .hero-subtext { margin-left: auto; margin-right: auto; }
-          .hero-ctas { align-items: center; }
-          .secondary-ctas { flex-direction: column; }
+          .hero-ctas { align-items: stretch; width: 100%; }
+          .hero-ctas .btn { width: 100%; display: flex; justify-content: center; }
+          .secondary-ctas { flex-direction: column; align-items: stretch; gap: 1rem; }
+          .retailer-links { flex-direction: column; align-items: stretch; width: 100%; gap: 1rem; }
+          .amazon-btn { justify-content: center; }
+          .trust-flex { flex-direction: column; gap: 3rem; }
           .capture-form { flex-direction: column; }
           .input-field { min-width: 100%; }
           .footer-flex { flex-direction: column; gap: 2rem; text-align: center; }
