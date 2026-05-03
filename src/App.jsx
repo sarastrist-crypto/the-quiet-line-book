@@ -51,7 +51,7 @@ function App() {
         <div className="container grid-2">
           <div className="hero-text">
             <div className="creds-hero">
-              Sydney Opera House · Carnegie Hall
+              A New Book by Tristian Walker
             </div>
             <h1 className="h1-hero">
               Some careers don't collapse —<br />
