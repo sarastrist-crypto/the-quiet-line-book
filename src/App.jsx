@@ -114,24 +114,24 @@ function App() {
         </div>
       </section>
 
-      {/* Trust Bar — 20 / 20 / 4 pillars with coda */}
+      {/* Trust Bar — experience pillars with coda */}
       <div className="trust-bar">
         <div className="container">
           <div className="trust-flex">
             <div className="trust-item">
-              <span className="trust-val">20<span className="trust-unit">yrs</span></span>
-              <span className="trust-label">In hospitality</span>
+              <span className="trust-val">20+<span className="trust-unit">yrs</span></span>
+              <span className="trust-label">Corporate &amp; hospitality leadership</span>
             </div>
             <div className="trust-item">
-              <span className="trust-val">20<span className="trust-unit">yrs</span></span>
-              <span className="trust-label">In the Executive Suite</span>
+              <span className="trust-val">2<span className="trust-unit">careers</span></span>
+              <span className="trust-label">Boardroom and world stage</span>
             </div>
             <div className="trust-item">
-              <span className="trust-val">4<span className="trust-unit">yrs</span></span>
-              <span className="trust-label">Spent on this book</span>
+              <span className="trust-val">1<span className="trust-unit">book</span></span>
+              <span className="trust-label">In your hands now</span>
             </div>
           </div>
-          <p className="trust-coda">Two careers, one equation — and a book four years in the making.</p>
+          <p className="trust-coda">Two decades across the boardroom and the stage — distilled into one honest reckoning.</p>
         </div>
       </div>
 
