@@ -266,7 +266,7 @@ function App() {
       <section className="section-py story-section" id="author">
         <div className="container grid-2">
           <div className="story-image">
-            <img src="/assets/tristian-portrait.jpg" alt="Tristian Walker, author of The Quiet Line" className="author-img" width="800" height="1000" loading="lazy" />
+            <img src="/assets/tristian-portrait.jpg?v=2" alt="Tristian Walker, author of The Quiet Line" className="author-img" width="800" height="1000" loading="lazy" />
           </div>
           <div className="story-content">
             <span className="tagline">About Tristian Walker</span>
