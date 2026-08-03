@@ -13,7 +13,8 @@ dist-ssr
 *.local
 
 # Claude Code local tooling
-.claude/
+.claude/*
+!.claude/skills/
 
 # Editor directories and files
 .vscode/*
