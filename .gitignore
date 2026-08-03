@@ -12,8 +12,11 @@ dist
 dist-ssr
 *.local
 
-# Claude Code local tooling
-.claude/
+# Claude Code local tooling. Local state stays out, skills are shared
+# workflow so they track. Note .claude/* not .claude/, since git cannot
+# re-include a file whose parent directory is excluded.
+.claude/*
+!.claude/skills/
 
 # Editor directories and files
 .vscode/*
