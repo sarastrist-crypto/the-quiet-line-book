@@ -124,7 +124,7 @@ needs a reader and a failure attached to it:
 | Persuasive | The single strongest reason to say no is answered on screen, before the ask |
 | On brand | Opened cold on a phone, the first paint is the real mark and the real type, not a fallback font wall |
 | Well organized | Someone who reads only the bolded lines still gets the whole argument |
-| Accurate | Every claim about a person or a past conversation traces to a line in `memory/log/` |
+| Accurate | Every claim about a person or a past conversation traces to a line in `cobbled-memory/log/` |
 
 **Where to find the five:** what does this have to accomplish, for exactly whom,
 and what is the most likely reason they bounce? The answers to those three, plus
